@@ -1,6 +1,6 @@
 class Board
 
-  attr_accessor :board
+  attr_accessor :board  # => nil
 
   def initialize
     @board = Array.new(3).map!{ Array.new(3) }
@@ -21,4 +21,42 @@ class Board
     puts     "#{@board[2][0]}      #{@board[2][1]}      #{@board[2][2]}\n\n"
   end
 
+  def choice(num, x_o)
+
+    case num
+
+    when 1
+      @board[0][0] = x_o
+    when 2
+      @board[0][1] = x_o
+    when 3
+      @board[0][2] = x_o
+    when 4
+      @board[1][0] = x_o
+    when 5
+      @board[1][1] = x_o
+    when 6
+      @board[1][2] = x_o
+    when 7
+      @board[2][0] = x_o
+    when 8
+      @board[2][1] = x_o
+    when 9
+      @board[2][2] = x_o
+    else
+      puts "NO SIR! invalid choice"
+    end
+  end
+
+  def check_for_win
+    if @board[0][0] == @board[0][1] && @board[0][0] == @board[0][2] ||
+       @board[0][0] == @board[1][0] && @board[0][0] == @board[2][0] ||
+       @board[0][0] == @board[1][1] && @board[0][0] == @board[2][2]
+       # @board[0][0] == @board[0][0] == @board[0][0]
+       # @board[0][0] == @board[0][0] == @board[0][0]
+       # @board[0][0] == @board[0][0] == @board[0][0]
+       # @board[0][0] == @board[0][0] == @board[0][0]
+       puts "#{@board[0][0]} wins!"
+     end
+   end
 end
