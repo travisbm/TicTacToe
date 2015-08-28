@@ -33,9 +33,3 @@ class Game
     end
   end
 end
-
-# ~> SyntaxError
-# ~> /Users/Britton/theironyard/TicTacToe/lib/user.rb:6: syntax error, unexpected end-of-input, expecting keyword_end
-# ~>
-# ~> /Users/Britton/theironyard/TicTacToe/lib/game.rb:1:in `require_relative'
-# ~> /Users/Britton/theironyard/TicTacToe/lib/game.rb:1:in `<main>'

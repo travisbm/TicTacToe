@@ -1,8 +1,9 @@
 class Board
-
+  attr_reader :win
   attr_accessor :board  # => nil
 
   def initialize
+    @win = false
     @board = Array.new(3).map!{ Array.new(3) }
     k = 1
     for i in 0..2
@@ -52,19 +53,39 @@ class Board
     if @board[0][0] == @board[0][1] && @board[0][0] == @board[0][2] ||
        @board[0][0] == @board[1][0] && @board[0][0] == @board[2][0] ||
        @board[0][0] == @board[1][1] && @board[0][0] == @board[2][2]
-       puts "#{@board[0][0]} wins!"
+       print_winner("#{@board[0][0]}")
+       @win = true
     elsif
        @board[0][1] == @board[1][1] && @board[0][1] == @board[2][1]
-       puts "#{@board[0][1]} wins!"
+       print_winner("#{@board[0][1]}")
+       @win = true
     elsif
        @board[0][2] == @board[1][2] && @board[0][2] == @board[2][2]
-       puts "#{@board[0][2]} wins!"
+       print_winner("#{@board[0][2]}")
+       @win = true
     elsif
        @board[1][0] == @board[1][1] && @board[1][0] == @board[1][2]
-       puts "#{@board[1][0]} wins!"
+       print_winner("#{@board[1][0]}")
+       @win = true
     elsif
        @board[2][0] == @board[2][1] && @board[2][0] == @board[2][2]
-       puts "#{@board[2][0]} wins!"
+       print_winner("#{@board[2][0]}")
+       @win = true
     end
    end
+
+   def print_winner(x_o)
+    if x_o == "X"
+      puts "X is the winner!"
+    elsif x_o == "O"
+      puts "O is the winner!"
+    else
+      puts "Cats Game!"
+    end
+  end
+
+
+
+
+
 end
