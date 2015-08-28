@@ -77,15 +77,8 @@ class Board
    def print_winner(x_o)
     if x_o == "X"
       puts "X is the winner!"
-    elsif x_o == "O"
-      puts "O is the winner!"
     else
-      puts "Cats Game!"
+      puts "O is the winner!"
     end
   end
-
-
-
-
-
 end
