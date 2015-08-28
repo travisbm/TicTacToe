@@ -14,7 +14,7 @@ class Board
   end
 
   def print_board
-    puts "\n\n#{@board[0][0]}      #{@board[0][1]}      #{@board[0][2]}\n\n"
+    puts "\n#{@board[0][0]}      #{@board[0][1]}      #{@board[0][2]}\n\n"
 
     puts     "#{@board[1][0]}      #{@board[1][1]}      #{@board[1][2]}\n\n"
 
