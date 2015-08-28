@@ -19,16 +19,3 @@ board.choice(position.to_i, choice)
 board.print_board
 
 end
-
-board.check_for_win
-
-# >>
-# >>
-# >> Let's play a game of Tic-Tac-Toe.
-# >>
-# >> Would you like to be (X)'s or (O)'s >
-
-# ~> NoMethodError
-# ~> undefined method `chomp' for nil:NilClass
-# ~>
-# ~> /Users/Britton/theironyard/TicTacToe/bin/tic-tac-toe.rb:6:in `<main>'
