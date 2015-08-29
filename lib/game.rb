@@ -16,7 +16,6 @@ class Game
     if @playmode == "C"
       puts "You still haven't written an AI dumb dumb.."
     else
-      puts "You are in else"
       x_o
       two_player
     end
