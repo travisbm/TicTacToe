@@ -46,29 +46,42 @@ class Game
 
   def two_player
     4.times do
-      print "Player 1 choose a number 1 - 9 to place your #{@x_o_p1} in that position > "
-      position = gets.chomp.to_i
+      loop do
+        print "Player 1 choose a number 1 - 9 to place your #{@x_o_p1} in that position > "
+        position = gets.chomp.to_i
         if !position.between?(1, 9)
           puts "NO SIR! invalid choice"
+        elsif !@board.choice(position, @x_o_p1)
+          puts "That position has been played. Please choose another."
         else
           @board.choice(position, @x_o_p1)
           system("clear")
           @board.print_board
           @board.check_for_win
-          break if @board.win
+          break
         end
-
-      print "Player 2 choose a number 1 - 9 to place your #{@x_o_p2} in that position > "
-      position = gets.chomp.to_i
-      if !position.between?(1, 9)
-        puts "NO SIR! invalid choice"
-      else
-        @board.choice(position, @x_o_p2)
-        system("clear")
-        @board.print_board
-        @board.check_for_win
-        break if @board.win
       end
+      break if @board.win
+
+      loop do
+        print "Player 2 choose a number 1 - 9 to place your #{@x_o_p2} in that position > "
+        position = gets.chomp.to_i
+        if !position.between?(1, 9)
+          puts "NO SIR! invalid choice"
+        elsif !@board.choice(position, @x_o_p2)
+          puts "That position has been played. Please choose another."
+        else
+          @board.choice(position, @x_o_p2)
+          system("clear")
+          @board.print_board
+          @board.check_for_win
+          break
+        end
+      end
+      break if @board.win
+    end
+    if !@board.win
+    puts "Cats Game!"
     end
   end
 end
