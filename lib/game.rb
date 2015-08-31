@@ -100,7 +100,9 @@ class Game
         end
       end
       break if @board.win
-
+    end
+    if !@board.win
+    puts "Cats Game!"
     end
   end
 
